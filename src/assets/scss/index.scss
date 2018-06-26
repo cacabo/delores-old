@@ -1,3 +1,6 @@
+$gray: #999;
+$border: rgba(0, 0, 0, 0.1);
+
 #app {
   width: 100%;
   overflow: hidden;
@@ -7,4 +10,49 @@
 #sidebar {
   width: 100%;
   background: white;
+}
+
+#map {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+body,
+html,
+p {
+  font-size: 1rem;
+}
+
+.form-control {
+  border-width: 2px;
+}
+
+label {
+  font-weight: bold;
+  color: $gray;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 848px) {
+  #app {
+    display: flex;
+  }
+
+  #sidebar {
+    width: calc(20rem + 2.5%);
+    padding: 0.5rem 0;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-right: 1px solid $border;
+  }
+
+  #map {
+    flex: 1;
+  }
 }

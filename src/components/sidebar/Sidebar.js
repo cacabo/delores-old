@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from '../forms/Input';
+import Select from '../forms/Select';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -41,11 +42,75 @@ class Sidebar extends Component {
   }
 
   render() {
+    const organOptions = [
+      'Heart',
+      'Lung',
+      'Liver',
+      'Kidney',
+    ];
+
+    const ageOptions = [
+      'Adult',
+      'Pediatric',
+    ];
+
+    const statusOptions = [
+      '1A',
+      '1B',
+      '2A',
+      '2B',
+      'Inactive',
+      'NA',
+    ];
+
+    const priorityOptions = [
+      "Priority 1",
+      "Priority 2",
+      "NA",
+    ];
+
     return (
       <div id="sidebar">
         <div className="container-fluid">
           <h2>Delores</h2>
+
           <form onSubmit={this.handleSubmit}>
+            <Select
+              name="organ"
+              value={this.state.organ}
+              type="text"
+              options={organOptions}
+              handleChange={this.handleChange}
+              label="Organ"
+            />
+
+            <Select
+              name="age"
+              value={this.state.age}
+              type="text"
+              options={ageOptions}
+              handleChange={this.handleChange}
+              label="Age"
+            />
+
+            <Select
+              name="status"
+              value={this.state.status}
+              type="text"
+              options={statusOptions}
+              handleChange={this.handleChange}
+              label="Status"
+            />
+
+            <Select
+              name="prioroty"
+              value={this.state.prioroty}
+              type="text"
+              options={priorityOptions}
+              handleChange={this.handleChange}
+              label="Priority"
+            />
+
             <Input
               name="waitTime"
               label="Wait time"
