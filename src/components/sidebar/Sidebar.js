@@ -16,6 +16,7 @@ class Sidebar extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeInt = this.handleChangeInt.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleChangeInt(event) {
@@ -39,6 +40,12 @@ class Sidebar extends Component {
   handleSubmit(event) {
     event.preventDeafult();
     console.log(this.state);
+  }
+
+  handleToggle() {
+    this.setState({
+      active: !this.state.active,
+    });
   }
 
   render() {
@@ -70,9 +77,11 @@ class Sidebar extends Component {
     ];
 
     return (
-      <div id="sidebar">
+      <div id="sidebar" className={this.props.active ? 'active' : ''}>
         <div className="container-fluid">
-          <h2>Delores</h2>
+          <h4 className="title">
+            Delores
+          </h4>
 
           <form onSubmit={this.handleSubmit}>
             <Select

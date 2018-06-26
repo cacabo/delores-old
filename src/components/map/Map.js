@@ -1,8 +1,19 @@
 import React from 'react';
-import Map from '../../assets/img/map.png';
+// import Map from '../../assets/img/map.png';
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps';
 
-export default () => (
-  <div id="map">
-    <img src={Map} className="img-fluid" alt="map" />
-  </div>
-);
+export default withScriptjs(withGoogleMap(props =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    <Marker
+      position={{ lat: -34.397, lng: 150.644 }}
+    />
+  </GoogleMap>
+));
