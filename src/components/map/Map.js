@@ -1,5 +1,5 @@
 import React from 'react';
-// import Map from '../../assets/img/map.png';
+
 import {
   withScriptjs,
   withGoogleMap,
