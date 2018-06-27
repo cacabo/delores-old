@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import Input from '../forms/Input';
 import Select from '../forms/Select';
+import Footer from './Footer';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -129,6 +131,8 @@ class Sidebar extends Component {
               type="number"
             />
           </form>
+
+          <Footer />
         </div>
       </div>
     );

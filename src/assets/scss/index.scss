@@ -188,3 +188,19 @@ label {
     flex: 1;
   }
 }
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  color: $gray;
+
+  p {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+
+    a {
+      text-decoration: underline;
+      color: $gray !important;
+    }
+  }
+}
