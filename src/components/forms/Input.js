@@ -8,6 +8,7 @@ const Input = ({
   type,
   placeholder,
   handleChange,
+  id,
 }) => (
   <div className="form-group">
     {label && (
@@ -21,17 +22,25 @@ const Input = ({
       name={name}
       type={type}
       placeholder={placeholder}
-      onChange={handleChange} />
+      onChange={handleChange}
+      id={id} />
   </div>
 );
+
+Input.defaultProps = {
+  label: '',
+  placeholder: '',
+  id: '',
+};
 
 Input.propTypes = {
   label: PropTypes.string,
   value: PropTypes.node.isRequired,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
+  id: PropTypes.string,
 };
 
 export default Input;

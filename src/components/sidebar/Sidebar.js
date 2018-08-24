@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Input from '../forms/Input';
+import InputLocation from '../forms/InputLocation';
 import Select from '../forms/Select';
 import Footer from './Footer';
 
@@ -9,6 +10,8 @@ class Sidebar extends Component {
     super(props);
 
     this.state = {
+      location: '',
+      locationObj: {},
       organ: '',
       age: '',
       status: '',
@@ -19,6 +22,14 @@ class Sidebar extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeInt = this.handleChangeInt.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.locationCallback = this.locationCallback.bind(this);
+  }
+
+  locationCallback(locationObj) {
+    this.setState({
+      locationObj,
+      location: locationObj.name,
+    });
   }
 
   handleChangeInt(event) {
@@ -88,6 +99,16 @@ class Sidebar extends Component {
           </h4>
 
           <form onSubmit={this.handleSubmit}>
+            <InputLocation
+              name="location"
+              label="Location"
+              value={this.state.location}
+              handleChange={this.handleChange}
+              callback={this.locationCallback}
+              placeholder="Search for a location"
+              type="text"
+            />
+
             <Select
               name="organ"
               value={this.state.organ}
