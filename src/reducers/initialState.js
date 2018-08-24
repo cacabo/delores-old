@@ -1,7 +1,7 @@
 export default {
   location: {
     name: '',
-    lat: -34.397,
-    lng: 150.644,
+    lat: 39.9524152,
+    lng: -75.1635755,
   },
 }

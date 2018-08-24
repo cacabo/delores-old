@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import location from './locationReducer';
+import locationReducer from './locationReducer';
 
 const rootReducer = combineReducers({
-  location,
+  location: locationReducer,
 });
 
 export default rootReducer;

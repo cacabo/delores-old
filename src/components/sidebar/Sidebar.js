@@ -4,6 +4,8 @@ import Input from '../forms/Input';
 import InputLocation from '../forms/InputLocation';
 import Select from '../forms/Select';
 import Footer from './Footer';
+import { connect } from 'react-redux';
+import { changeLocation } from '../../actions/locationActions';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -26,6 +28,8 @@ class Sidebar extends Component {
   }
 
   locationCallback(locationObj) {
+    this.props.changeLocation(locationObj);
+    
     this.setState({
       locationObj,
       location: locationObj.name,
@@ -161,4 +165,20 @@ class Sidebar extends Component {
   }
 };
 
-export default Sidebar;
+const mapStateToProps = () => {
+  return {};
+};
+
+// Allows us to dispatch a changeName event by calling this.props.changeFullName
+// NOTE this is necessary for redux state to render on nav bar
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeLocation: (location) => dispatch(changeLocation(location)),
+  };
+};
+
+// Redux config
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Sidebar);
