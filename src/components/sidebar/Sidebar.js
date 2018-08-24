@@ -23,11 +23,13 @@ class Sidebar extends Component {
 
   handleChangeInt(event) {
     const strValue = event.target.value;
-    if (strValue === "") {
+
+    if (strValue === '') {
       this.handleChange(event);
     }
 
     const intValue = Number.parseInt(strValue, 10);
+
     if (!isNaN(intValue) && intValue >= 0) {
       this.handleChange(event);
     }
@@ -73,9 +75,9 @@ class Sidebar extends Component {
     ];
 
     const priorityOptions = [
-      "Priority 1",
-      "Priority 2",
-      "NA",
+      'Priority 1',
+      'Priority 2',
+      'NA',
     ];
 
     return (
