@@ -1,4 +1,9 @@
 #map {
   width: 100%;
   background: $gray;
+
+  #google-map {
+    width: 100%;
+    height: 100%;
+  }
 }
