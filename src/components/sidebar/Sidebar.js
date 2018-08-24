@@ -54,7 +54,6 @@ class Sidebar extends Component {
 
   handleSubmit(event) {
     event.preventDeafult();
-    console.log(this.state);
   }
 
   handleToggle() {
