@@ -1,10 +1,19 @@
 export default {
-  location: {
+  locationState: {
     name: '',
     lat: 39.9524152,
     lng: -75.1635755,
   },
-  sidebar: {
+  mapState: {
+    organ: 'Heart',
+    age: 'Adult',
+    status: '1A',
+    priority: 'Priority 1',
+    waitTime: null,
+    radiusType: 'Local',
+    radius: 20,
+  },
+  sidebarState: {
     active: false,
   },
 };

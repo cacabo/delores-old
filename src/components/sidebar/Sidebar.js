@@ -168,8 +168,6 @@ const mapStateToProps = ({ sidebarState }) => {
   return sidebarState;
 };
 
-// Allows us to dispatch a changeName event by calling this.props.changeFullName
-// NOTE this is necessary for redux state to render on nav bar
 const mapDispatchToProps = (dispatch) => {
   return {
     changeLocation: (location) => dispatch(changeLocation(location)),
