@@ -1,7 +1,11 @@
 #app {
   width: 100%;
-  overflow: hidden;
   background: #ffffff;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
 }
 
 body,

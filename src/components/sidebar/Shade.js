@@ -2,31 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleSidebar } from '../../actions/sidebarActions';
-import NavLinks from './NavLinks';
 
-class Nav extends Component {
+class Shade extends Component {
   render() {
     return (
-      <div id="nav-wrapper">
-        <nav id="nav">
-          <h4 className="title">
-            Delores
-          </h4>
-
-          <div id="toggle" className={this.props.active ? 'active' : ''} onClick={this.props.toggleSidebar}>
-            <span className="bar" id="first" />
-            <span className="bar" id="second" />
-            <span className="bar" id="third" />
-          </div>
-
-          <NavLinks />
-        </nav>
-      </div>
-    );
+      <div
+        id="shade"
+        className={ this.props.active ? 'active' : '' }
+        onClick={this.props.toggleSidebar}
+      />
+    )
   }
-}
+};
 
-Nav.propTypes = {
+Shade.propTypes = {
   active: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired,
 };
@@ -47,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Nav);
+)(Shade);

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { changeLocation } from '../../actions/locationActions';
 
 import Input from '../forms/Input';
 import InputLocation from '../forms/InputLocation';
 import Select from '../forms/Select';
 import Footer from './Footer';
-import { connect } from 'react-redux';
-import { changeLocation } from '../../actions/locationActions';
+import RadiusSelect from './RadiusSelect';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -13,7 +16,6 @@ class Sidebar extends Component {
 
     this.state = {
       location: '',
-      locationObj: {},
       organ: '',
       age: '',
       status: '',
@@ -29,9 +31,8 @@ class Sidebar extends Component {
 
   locationCallback(locationObj) {
     this.props.changeLocation(locationObj);
-    
+
     this.setState({
-      locationObj,
       location: locationObj.name,
     });
   }
@@ -97,10 +98,6 @@ class Sidebar extends Component {
     return (
       <div id="sidebar" className={this.props.active ? 'active' : ''}>
         <div className="container-fluid">
-          <h4 className="title">
-            Delores
-          </h4>
-
           <form onSubmit={this.handleSubmit}>
             <InputLocation
               name="location"
@@ -156,6 +153,8 @@ class Sidebar extends Component {
               placeholder="Time in days"
               type="number"
             />
+
+            <RadiusSelect />
           </form>
 
           <Footer />
@@ -165,8 +164,8 @@ class Sidebar extends Component {
   }
 };
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = ({ sidebarState }) => {
+  return sidebarState;
 };
 
 // Allows us to dispatch a changeName event by calling this.props.changeFullName
@@ -175,6 +174,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     changeLocation: (location) => dispatch(changeLocation(location)),
   };
+};
+
+Sidebar.propTypes = {
+  changeLocation: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
 };
 
 // Redux config

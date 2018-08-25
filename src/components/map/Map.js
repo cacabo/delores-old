@@ -7,6 +7,11 @@ class Map extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      map: null,
+      marker: null,
+    };
+
     this.initMap = this.initMap.bind(this);
     this.waitForGoogle = this.waitForGoogle.bind(this);
     this.setMarker = this.setMarker.bind(this);
@@ -61,9 +66,9 @@ class Map extends Component {
       zoom: 8,
     });
 
-    this.setState({ map });
-
-    this.setMarker();
+    this.setState({ map }, () => {
+      this.setMarker();
+    });
   }
 
   render() {
@@ -73,9 +78,9 @@ class Map extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ locationState }) {
   return {
-    location: state.location,
+    location: locationState,
   };
 }
 

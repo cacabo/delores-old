@@ -3,30 +3,19 @@ import React, { Component } from 'react';
 import Map from './components/map/Map';
 import Sidebar from './components/sidebar/Sidebar';
 import Nav from './components/sidebar/Nav';
+import Shade from './components/sidebar/Shade';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      active: false,
-    };
-
-    this.handleToggle = this.handleToggle.bind(this);
-  }
-
-  handleToggle() {
-    this.setState({
-      active: !this.state.active,
-    });
-  }
-
   render() {
     return (
       <div id="app">
-        <Nav active={this.state.active} handleToggle={this.handleToggle} />
-        <Sidebar active={this.state.active} />
-        <Map />
+        <Nav />
+        <div className="nav-spacer" />
+        <Shade />
+        <div className="flex-container">
+          <Sidebar />
+          <Map />
+        </div>
       </div>
     );
   }
