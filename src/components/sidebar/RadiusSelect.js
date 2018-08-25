@@ -8,9 +8,9 @@ class RadiusSelect extends Component {
       'State',
       'Nation',
     ];
-    
+
     return (
-      <Radios label="Radius" options={options} />
+      <Radios label="Radius" options={options} inline />
     )
   }
 }
