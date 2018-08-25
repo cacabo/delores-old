@@ -59,8 +59,6 @@ class RadiusSelect extends Component {
             />
           )
         }
-
-        <p>{this.props.radiusType}, {this.props.radius}</p>
       </div>
     )
   }
