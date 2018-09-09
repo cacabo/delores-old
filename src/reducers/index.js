@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import locationReducer from './locationReducer';
-import sidebarReducer from './sidebarReducer'
+import sidebarReducer from './sidebarReducer';
 import mapReducer from './mapReducer';
 
 const rootReducer = combineReducers({
