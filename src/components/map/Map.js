@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import hospitals from '../../assets/hospitals';
+
 const MILES_TO_METERS = 1609.34;
 const BLUE = '#3b78e7';
 
@@ -21,6 +23,7 @@ class Map extends Component {
     this.locationChanged = this.locationChanged.bind(this);
     this.radiusChanged = this.radiusChanged.bind(this);
     this.drawRadius = this.drawRadius.bind(this);
+    this.renderHospitals = this.renderHospitals.bind(this);
   }
 
   componentDidMount() {
@@ -108,14 +111,63 @@ class Map extends Component {
     }
   }
 
+  renderHospitals() {
+    const hospitalMarkers = [];
+    const { map, geocoder } = this.state;
+
+    Object.keys(hospitals).forEach(key => {
+      const hospital = hospitals[key];
+      const { address } = hospital;
+
+      if (hospital.location) {
+        const marker = new google.maps.Marker({
+          map: map,
+          position: hospital.location,
+          icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+          }
+        });
+
+        hospitalMarkers.push(marker);
+      } else {
+        geocoder.geocode({ 'address': address }, function(results, status) {
+          console.log("GEOCODING");
+          if (status === google.maps.GeocoderStatus.OK) {
+            const { location } = results[0].geometry;
+
+            console.log(key, location.lat(), location.lng());
+
+            const marker = new google.maps.Marker({
+              map: map,
+              position: location,
+              icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+              }
+            });
+
+            hospitalMarkers.push(marker);
+          }
+        });
+      }
+    });
+
+    this.setState({ hospitalMarkers });
+  }
+
   initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
       center: this.props.location,
       zoom: 8,
     });
 
-    this.setState({ map }, () => {
+    const geocoder= new google.maps.Geocoder();
+
+    this.setState({
+      map,
+      geocoder,
+    }, () => {
       this.setMarker();
+      this.renderHospitals();
     });
   }
 
