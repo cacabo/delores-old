@@ -296,40 +296,260 @@ export default {
       lng: -118.29184470000001,
     },
   },
+  COCH: {
+    name: "Children's Hospital Colorado",
+    address: "13123 E 16th Ave, Aurora, CO 80045",
+    state: "CO",
+    location: {
+      lat: 39.7422495,
+      lng: -104.8349311,
+    },
+  },
+  COUC: {
+    name: "University of Colorado Hospital/Health Science Center",
+    address: "1207, 1620 N Gaylord St, Denver, CO 80206",
+    state: "CO",
+    location: {
+      lat: 39.7421021,
+      lng: -104.96065249999998,
+    },
+  },
+  COPM: {
+    name: "Centura Porter Adventist Hospital",
+    address: "2525 S Downing St Denver, Colorado 80210",
+    state: "CO",
+    location: {
+      lat: 39.6700386,
+      lng: -104.97481949999997,
+    },
+  },
+  COSL: {
+    name: "Presbyterian/St Luke's Medical Center",
+    address: "1719 East 19th Ave. Denver, CO 80218",
+    state: "CO",
+    location: {
+      lat: 39.74704759999999,
+      lng: -104.96651689999999,
+    },
+  },
+  CTHH: {
+    name: "Hartford Hospital",
+    address: "80 Seymour Street Hartford, CT 06102",
+    state: "CT",
+    location: {
+      lat: 41.7541227,
+      lng: -72.67917929999999,
+    },
+  },
+  CTYN: {
+    name: "Yale New Haven Hospital",
+    address: "20 York Street New Haven, CT 06510",
+    state: "CT",
+    location: {
+      lat: 41.3044229,
+      lng: -72.9355663,
+    },
+  },
+  DCCH: {
+    name: "Children's National Medical Center",
+    address: "111 Michigan Avenue NW, Washington, D.C., 20010",
+    state: "DC",
+    location: {
+      lat: 38.9271267,
+      lng: -77.014524,
+    },
+  },
+  DCGU: {
+    name: "Georgetown University Medical Center",
+    address: "4000 Reservoir Road, Suite 120, N.W., Washington D.C. 20057",
+    state: "DC",
+    location: {
+      lat: 38.9118754,
+      lng: -77.07837010000003,
+    },
+  },
+  DCGW: {
+    name: "George Washington University Hospital",
+    address: "900 23rd St NW, Washington, DC 20037",
+    state: "DC",
+    location: {
+      lat: 38.901261,
+      lng: -77.0507412,
+    },
+  },
+  DCWH: {
+    name: "Washington Hospital Center",
+    address: "110 Irving Street, NW Washington, D.C., 20010",
+    state: "DC",
+    location: {
+      lat: 38.92950039999999,
+      lng: -77.0144985,
+    },
+  },
+  DECC: {
+    name: "Christiana Care Health Services",
+    address: "4701 Ogletown-Stanton Road, Newark, DE 19713",
+    state: "DC",
+    location: {
+      lat: 39.6878474,
+      lng: -75.6747186,
+    },
+  },
+  DEAI: {
+    name: "Alfred I duPont Hospital for Children",
+    address: "1600 Rockland Road Wilmington, DE 19803",
+    state: "DC",
+    location: {
+      lat: 39.7793789,
+      lng: -75.55529760000002,
+    },
+  },
+  PALV: {
+    name: "Lehigh Valley Hospitals",
+    address: "1200 S Cedar Crest Blvd, Allentown, PA 18103",
+    location: {
+      lat: 40.5667105,
+      lng: -75.52375519999998,
+    },
+  },
+  PAGM: {
+    name: "Geisinger Medical Center",
+    address: "100 N. Academy Ave. Danville, PA 17822",
+    location: {
+      lat: 40.9677777,
+      lng: -76.60534719999998,
+    },
+  },
+  PAPH: {
+    name: "UPMC Hamot",
+    address: "201 State St, Erie, PA 16550",
+    location: {
+      lat: 42.134549,
+      lng: -80.08649179999998,
+    },
+  },
+  PAHH: {
+    name: "Pinnacle Health System at Harrisburg Hospital",
+    address: "201 State St, Erie, PA 16550",
+    location: {
+      lat: 42.134549,
+      lng: -80.08649179999998,
+    },
+  },
+  PAHE: {
+    name: "Penn State Milton S Hershey Medical Center",
+    address: "500 University Dr, Hershey, PA 17033",
+    location: {
+      lat: 40.2644142,
+      lng: -76.67463169999996,
+    },
+  },
+  PAHM: {
+    name: "Hahnemann University Hospital",
+    address: "230 N Broad St, Philadelphia, PA 19102",
+    location: {
+      lat: 39.9571806,
+      lng: -75.16289840000002,
+    },
+  },
+  PASC: {
+    name: "St. Christopher's Hospital for Children",
+    address: "160 E Erie Ave, Philadelphia, PA 19134",
+    location: {
+      lat: 40.00699669999999,
+      lng: -75.12455130000001,
+    },
+  },
+  PATJ: {
+    name: "Thomas Jefferson University Hospital",
+    address: "132 S 10th St, Philadelphia, PA 19107",
+    location: {
+      lat: 39.9490857,
+      lng: -75.15736549999997,
+    },
+  },
+  PATU: {
+    name: "Temple University Hospital",
+    address: "3401 N Broad St, Philadelphia, PA 19140",
+    location: {
+      lat: 40.0054237,
+      lng: -75.15071979999999,
+    },
+  },
+  PAUP: {
+    name: "Hospital of the University of Pennsylvania",
+    address: "3400 Spruce St, Philadelphia, PA 19104",
+    location: {
+      lat: 39.950044,
+      lng: -75.193131,
+    },
+  },
+  PAAE: {
+    name: "Albert Einstein Medical Center",
+    address: "5501 Old York Road Philadelphia, PA 19141",
+    location: {
+      lat: 40.0367216,
+      lng: -75.14318229999998,
+    },
+  },
+  PACP: {
+    name: "Children's Hospital of Philadelphia",
+    address: "3401 Civic Center Blvd, Philadelphia, PA 19104",
+    location: {
+      lat: 39.9487,
+      lng: -75.19354570000002,
+    },
+  },
+  PACH: {
+    name: "UPMC Children's Hospital of Pittsburgh",
+    address: "4401 Penn Ave, Pittsburgh, PA 15224",
+    location: {
+      lat: 40.466533,
+      lng: -79.9532034,
+    },
+  },
+  PAAG: {
+    name: "Allegheny General Hospital",
+    address: "320 East North Avenue Pittsburgh, PA 15212",
+    location: {
+      lat: 40.45659879999999,
+      lng: -80.00282419999996,
+    },
+  },
+  PAVA: {
+    name: "VA Pittsburgh Healthcare System",
+    address: "4100 Allequippa St, Pittsburgh, PA 15213",
+    location: {
+      lat: 40.4462661,
+      lng: -79.96080740000002,
+    },
+  },
+  PAPT: {
+    name: "University of Pittsburgh Medical Center",
+    address: "200 Lothrop St, Pittsburgh, PA 15213",
+    location: {
+      lat: 40.4425606,
+      lng: -79.96098269999999,
+    },
+  },
+  PACC: {
+    name: "Crozer-Chester Medical Center",
+    address: "1 Medical Center Blvd, Chester, PA 19013",
+    location: {
+      lat: 39.8557631,
+      lng: -75.36819149999997,
+    },
+  },
+  PALH: {
+    name: "The Lankenau Hospital",
+    address: "100 Lancaster Ave, Wynnewood, PA 19096",
+    location: {
+      lat: 39.9885015,
+      lng: -75.25734,
+    },
+  },
 };
 
-// Colorado
-//
-// COCH: Children's Hospital Colorado 13123 E 16th Ave, Aurora, CO 80045
-//
-// COUC: University of Colorado Hospital/Health Science Center 1207, 1620 N Gaylord St, Denver, CO 80206
-//
-// COPM: Centura Porter Adventist Hospital 2525 S Downing St Denver, Colorado 80210
-//
-// COSL: Presbyterian/St Luke's Medical Center 1719 East 19th Ave. Denver, CO 80218
-//
-// Connecticut
-//
-// CTHH: Hartford Hospital 80 Seymour Street Hartford, CT 06102
-//
-// CTYN: Yale New Haven Hospital 20 York Street
-// New Haven, CT 06510
-//
-// D.C.
-//
-// DCCH: Children's National Medical Center 111 Michigan Avenue NW, Washington, D.C., 20010
-//
-// DCGU: Georgetown University Medical Center  Suite 120
-// 4000 Reservoir Road, N.W., Washington D.C. 20057
-//
-// DCGW: George Washington University Hospital 900 23rd St NW, Washington, DC 20037
-//
-// DCWH: Washington Hospital Center 110 Irving Street, NW Washington, D.C., 20010
-//
-// DECC: Christiana Care Health Services 4701 Ogletown-Stanton Road, Newark, DE 19713
-//
-// DEAI: Alfred I duPont Hospital for Children 1600 Rockland Road
-// Wilmington, DE 19803
 //
 // Florida
 //
@@ -656,45 +876,6 @@ export default {
 //
 // ORVA: VA Portland Health Care System 3710 SW US Veterans Hospital Rd, Portland, OR 97239
 //
-// Pennsylvania
-//
-// PALV: Lehigh Valley Hospital	 1200 S Cedar Crest Blvd, Allentown, PA 18103
-//
-// PAGM: Geisinger Medical Center	 100 N. Academy Ave.
-// Danville, PA 17822
-//
-// PAPH: UPMC Hamot
-//
-// PAHH: Pinnacle Health System at Harrisburg Hospital 201 State St, Erie, PA 16550
-//
-// PAHE: Penn State Milton S Hershey Medical Center  500 University Dr, Hershey, PA 17033
-//
-// PAHM: Hahnemann University Hospital 230 N Broad St, Philadelphia, PA 19102
-//
-// PASC: St. Christopher's Hospital for Children 160 E Erie Ave, Philadelphia, PA 19134
-//
-// PATJ: Thomas Jefferson University Hospital 132 S 10th St, Philadelphia, PA 19107
-//
-// PATU: Temple University Hospital 3401 N Broad St, Philadelphia, PA 19140
-//
-// PAUP: Hospital of the University of Pennsylvania	3400 Spruce St, Philadelphia, PA 19104
-//
-// PAAE: Albert Einstein Medical Center 5501 Old York Road Philadelphia, PA 19141
-//
-// PACP: Children's Hospital of Philadelphia 3401 Civic Center Blvd, Philadelphia, PA 19104
-//
-// PACH: UPMC Children's Hospital of Pittsburgh 4401 Penn Ave, Pittsburgh, PA 15224
-//
-// PAAG: Allegheny General Hospital 320 East North Avenue Pittsburgh, PA 15212
-//
-// PAVA: VA Pittsburgh Healthcare System	4100 Allequippa St, Pittsburgh, PA 15213
-//
-// PAPT: University of Pittsburgh Medical Center	 200 Lothrop St, Pittsburgh, PA 15213
-//
-// PACC: Crozer-Chester Medical Center 1 Medical Center Blvd, Chester, PA 19013
-//
-//
-// PALH: The Lankenau Hospital	  100 Lancaster Ave, Wynnewood, PA 19096
 //
 //
 // Puerto Ric0 (ignore last one if difficult)

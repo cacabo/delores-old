@@ -131,7 +131,6 @@ class Map extends Component {
         hospitalMarkers.push(marker);
       } else {
         geocoder.geocode({ 'address': address }, function(results, status) {
-          console.log("GEOCODING");
           if (status === google.maps.GeocoderStatus.OK) {
             const { location } = results[0].geometry;
 
