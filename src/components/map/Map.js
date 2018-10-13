@@ -19,6 +19,7 @@ class Map extends Component {
 
     this.initMap = this.initMap.bind(this);
     this.waitForGoogle = this.waitForGoogle.bind(this);
+    this.createMarker = this.createMarker.bind(this);
     this.setMarker = this.setMarker.bind(this);
     this.locationChanged = this.locationChanged.bind(this);
     this.radiusChanged = this.radiusChanged.bind(this);
@@ -82,6 +83,16 @@ class Map extends Component {
     }
   }
 
+  createMarker({ location, icon }) {
+    const { map } = this.state;
+
+    return new google.maps.Marker({
+      position: location,
+      icon,
+      map,
+    });
+  }
+
   setMarker() {
     const existingMarker = this.state.marker;
 
@@ -90,10 +101,8 @@ class Map extends Component {
       existingMarker.setMap(null);
     }
 
-    const newMarker = new google.maps.Marker({
-      position: this.props.location,
-      map: this.state.map,
-    });
+    const { location } = this.props;
+    const newMarker = this.createMarker({ location });
 
     this.drawRadius();
 
@@ -112,50 +121,60 @@ class Map extends Component {
   }
 
   renderHospitals() {
-    const hospitalMarkers = [];
-    const { map, geocoder } = this.state;
+    const hospitalMarkers = {};
+    const { geocoder } = this.state;
 
     Object.keys(hospitals).forEach(key => {
       const hospital = hospitals[key];
       const { address } = hospital;
+      const icon = {
+        url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+      };
 
-      if (hospital.location) {
-        const marker = new google.maps.Marker({
-          map: map,
-          position: hospital.location,
-          icon: {
-            url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-          }
-        });
+      const createMarker = this.createMarker;
 
-        hospitalMarkers.push(marker);
-      } else {
-        geocoder.geocode({ 'address': address }, function(results, status) {
-          if (status === google.maps.GeocoderStatus.OK) {
-            const { location } = results[0].geometry;
+      const awaitMarker = new Promise(function(resolve, reject) {
+        if (hospital.location) {
+          resolve(createMarker({
+            location: hospital.location,
+            icon,
+          }));
+        } else {
+          geocoder.geocode({ 'address': address }, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+              const { location } = results[0].geometry;
 
-            console.log(key, location.lat(), location.lng());
+              console.log(key, location.lat(), location.lng());
 
-            const marker = new google.maps.Marker({
-              map: map,
-              position: location,
-              icon: {
-                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-              }
-            });
+              resolve(createMarker({
+                location,
+                icon,
+              }));
+            }
 
-            hospitalMarkers.push(marker);
-          }
-        });
-      }
+            reject();
+          });
+        }
+      });
+
+      awaitMarker.then(marker => {
+        hospitalMarkers[key] = marker;
+
+        (function(marker) {
+          google.maps.event.addListener(marker,'click', function() {
+            console.log(key);
+          });
+        })(hospitalMarkers[key]);
+      });
     });
 
     this.setState({ hospitalMarkers });
   }
 
   initMap() {
+    const { location } = this.props;
     const map = new google.maps.Map(document.getElementById('map'), {
-      center: this.props.location,
+      center: location,
       zoom: 8,
     });
 
@@ -172,7 +191,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div id="map"></div>
+      <div id="map" />
     );
   }
 }
